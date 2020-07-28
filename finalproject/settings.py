@@ -25,7 +25,8 @@ SECRET_KEY = 'q&9o*#pas-)7qc_vlsqlj5bk9sq6qt@9kwc8&&c)8hjo3u+$-z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myfinalproject-1--spicyc.repl.co', 'myfinalproject-1--spicyc.repl.co']
+ALLOWED_HOSTS = ['myfinalproject-1--spicyc.repl.co', 'myfinalproject-1--spicyc.repl.co',
+'mxmapp2--spicyc.repl.co']
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'myapp',
 ]
 
 MIDDLEWARE = [
