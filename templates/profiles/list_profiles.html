@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1><strong>Profiles</strong></h1>
+    <p><button><a class="add" href="{% url 'add_profiles' %}">Add New Profile</a></button>
+    
+
+
+  <div class="everything">
+          
+          {% for profile in myapp %}
+          <div class="flex">
+          
+          <h2> "{{ profile.name }}" </h2>
+          <img src="{{ profile.image_url }}" height='200' width='250'>
+          <h4>, {{ profile.position }}
+          <p> @ {{ profile.company }}</p>
+        
+          <p>
+          <button class="button2"><a class="profilesstuff" href="{% url 'profiles_details' pk=profile.pk %}">Profiles Details</a></button>
+          <button class="button2"><a class="profilesstuff"
+           href="{% url 'edit_profiles' pk=profile.pk %}"> Edit Profile </a></button>
+
+          <button class="delete_alert button2 profilesstuff" data-profile={{profile.pk}}> Delete Profile</button>
+
+          </p></h4>
+          
+          </div>
+
+          <br>
+          {% endfor %}
+       
+  </div>
+
+{% endblock %}
