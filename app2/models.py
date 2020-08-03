@@ -11,8 +11,9 @@ class Profile (models.Model):
       return f"{self.name} from {self.citystate}"
 
 
-#class Bio (models.Model):
-    #interests= models.CharField(max_length=225)
-   # about= models.CharField(max_length=225)
-    #def __str__(self):
-      #return f"{self.interests} from {self.about}" 
+class Bio (models.Model):
+    interests= models.CharField(max_length=225)
+    about= models.CharField(max_length=225)
+    def __str__(self):
+        
+      return f"{self.interests} from {self.about}" 

@@ -11,6 +11,11 @@ def list_profiles(request):
   return render(request, 'profiles/list_profiles.html', context={'app2':all_profiles})
 
 
-#def list_bio(request):
-    #all_bios = Bio.objects.all()
-   # .order_by():  
+
+
+def bio_detail(request, pk):
+  bio = get_object_or_404(Bio, pk=pk)
+  return render(request, "profiles/profile_detail.html", {"bio": bio})
+
+return render(request, 
+   'profiles/add_profile.html', context= {'bio':all_bios}

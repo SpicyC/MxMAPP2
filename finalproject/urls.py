@@ -19,7 +19,10 @@ from app2 import views as app2_views
 
 urlpatterns = [   
     path('admin/', admin.site.urls),
+
     path('', app2_views.list_profiles, name='Home'),
+
+    path('bios/', app2_views.profile_details, name='detail'),
     
 
 ]
