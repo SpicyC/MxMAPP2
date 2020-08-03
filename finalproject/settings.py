@@ -26,7 +26,7 @@ SECRET_KEY = 'q&9o*#pas-)7qc_vlsqlj5bk9sq6qt@9kwc8&&c)8hjo3u+$-z'
 DEBUG = True
 
 ALLOWED_HOSTS = ['mxmapp2.mikeabraha.repl.co',
-'mxmapp2--mikeabraha.repl.co']
+'mxmapp2--mikeabraha.repl.co', 'mxmapp2.spicyc.repl.co', 'mxmapp2.brandilove.repl.co']
 
 
 # Application definition
