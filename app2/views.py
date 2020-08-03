@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import Profile
+from .models import Profile, Bio
 from .forms import ProfileForm
 
 
@@ -13,9 +13,32 @@ def list_profiles(request):
 
 
 
-def bio_detail(request, pk):
+def profile_details(request, pk):
   bio = get_object_or_404(Bio, pk=pk)
-  return render(request, "profiles/profile_detail.html", {"bio": bio})
+  return render(request, 'profiles/profile_details.html',{'bio': bio})
 
-return render(request, 
-   'profiles/add_profile.html', context= {'bio':all_bios}
+  return render(request, 
+  'profiles/profile_details.html',{'bio': bio})
+
+
+def update_profile(request, pk):
+    profile = get_object_or_404(Profile, pk=pk)
+    if request.method == 'GET':
+        form = ProfileForm(instance=Profile)
+    else:
+        form= ProfileForm(data=request.POST, instance=Profile)
+        if form.is_valid():
+            form.save()
+            return redirect(to='list_profiles')
+
+    return render(request, "albums/edit_album.html", 
+        {"form": form,
+        "album": album}
+
+def delete_profile(request, pk):
+    profile = get_object_or_404(Profile, pk=pk)
+    if request.method == 'POST':
+        profile.delete()
+        return redirect(to='list_profiles')
+
+    return render(request, "profiles/delete_profile.html", context={"profile": profile})
