@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-
+{% extends "base.html" %}
+{% load static %}
+<title>HOME</title>
+{% block content %}
 
 <div class="header">
 
   <h2>Welcome <Code></Code></h2>
-    <button>
-    <a href="index.html"> Home </a>  
-    </button>
- 
-    <button>
-      <a href="resume.html">  Resume </a> 
-    </button>
+    
+     <p><a href="{% url 'index.html' %}">Home</a></p>
+     
+     <p><a href="{% url 'list_profiles.html' %}">Home</a></p>
 
-    <button>
-    <a href="Projects.html"> Projects </a> 
-    </button>
- 
-
-
-
+     <p><a href="{% url 'update_profile.html' %}">Update Profile></a></p>
 </div>
 
 <div class="row">
@@ -47,7 +33,7 @@
     <div class="card">
       <h2>About Me</h2>
       <div class="fakeimg" style="height:100px;">Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <p>Some text about me </p> 
     </div>
     <div class="card">
       <h3>Popular Post</h3>
@@ -68,7 +54,6 @@
   <h2>Footer</h2>
     </div>
 
-    <body>  
-    <script src="script.js"></script>
-    </body>
-</html>
+ 
+
+{% endblock %}

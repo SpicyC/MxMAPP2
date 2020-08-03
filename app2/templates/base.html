@@ -5,30 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-
+    <link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css" />
 
   </head>
 <div class="header">
 
   <h2>Welcome <Code></Code></h2>
-    <button>
-        <a href="index.html"> Home </a>  
-    </button>
- 
-    <button>
-        <a href="learning.html"> Learning </a>  
-    </button>
+  
+    <p><a href="{% url 'index.html' %}">Home</a></p>
+     
+     <p><a href="{% url 'list_profiles.html' %}">Home</a></p>
 
-
-
-    <button>
-      <a href="welcome.html">  Welcome </a> 
-    </button>
-
-    <button>
-        <a href="studentpage.html"> Student Page </a> 
-    </button>
+     <p><a href="{% url 'update_profile.html' %}">Update Profile></a></p>
  
 </div>
 
@@ -70,7 +58,5 @@
   <h2>Footer</h2>
     </div>
 
-    <body>  
-    <script src="script.js"></script>
-    </body>
+   
 </html>
