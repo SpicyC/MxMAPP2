@@ -17,10 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from app2 import views as app2_views
 
-urlpatterns = [
+urlpatterns = [   
+     path('admin/', admin.site.urls),
 
-    
-    path('admin/', admin.site.urls),
     path('', app2_views.list_profiles, name='Home'),
 
 ]
