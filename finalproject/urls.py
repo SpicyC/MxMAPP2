@@ -31,5 +31,5 @@ urlpatterns = [
 
     path('app2/add/',app2_views.add_profile,name='add_profile'),
 
-    path('app2/<int:pk>/update/',app2_views.update_profile),
+    path('app2/<int:pk>/update/',app2_views.update_profile, name= 'update_profile'),
 ]
