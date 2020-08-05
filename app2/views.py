@@ -31,9 +31,10 @@ def update_profile(request, pk):
             form.save()
             return redirect(to='list_profiles')
 
-    return render(request, "albums/edit_album.html", 
-        {"form": form,
-        "album": album}
+    return render(request, "profiles/update_profile.html",{"form": form,
+    "profile": profile})
+
+
 
 def delete_profile(request, pk):
     profile = get_object_or_404(Profile, pk=pk)
@@ -41,4 +42,13 @@ def delete_profile(request, pk):
         profile.delete()
         return redirect(to='list_profiles')
 
-    return render(request, "profiles/delete_profile.html", context={"profile": profile})
+    return render(request, "profiles/delete_profile.html",              {"profile": profile})
+
+
+def add_profile(request,pk):
+    profile = get_object_or_404(Profile, pk=pk)
+    if request.method == 'POST':
+        profile.delete()
+        return redirect(to='list_profiles')
+    
+    return render(request,"profiles/list_profiles.html",{"profile":profile})
