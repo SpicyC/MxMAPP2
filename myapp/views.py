@@ -17,7 +17,7 @@ def add_profiles(request):
         form = profileForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect(to='list_profiles')
+            return redirect(to='profiles/list_profiles.html')
 
     return render(request, "profiles/add_profiles.html", {"form": form})
 
@@ -45,7 +45,7 @@ def edit_profiles(request, pk):
         
         if form.is_valid():
             form.save()
-            return redirect(to='list_profiles')
+            return redirect(to='list_profiles.html')
 
     return render(request, "profiles/edit_profiles.html", {
         "form": form, "profile": profile})
