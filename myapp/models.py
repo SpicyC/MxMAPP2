@@ -4,7 +4,7 @@ from django.db import models
 class Profile(models.Model):
     name = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
-    position = models.DateField()
+    position = models.CharField(max_length=255)
     image_url = models.TextField(null=True, blank=True)
     company = models.TextField(null=True, blank=True)
     

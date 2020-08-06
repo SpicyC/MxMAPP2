@@ -19,10 +19,15 @@ from myapp import views as profile_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('', profile_views.index, name='list_profiles'),
-    path('profiles/add/', profile_views.add_profiles, name='add_profiles'),
-    path('profiles/<int:pk>/delete/', profile_views.delete_profiles, name='delete_albums'),
+
+    path('profiles/add_profiles', profile_views.add_profiles, name='add_profiles'),
+
+    path('profiles/<int:pk>/delete/', profile_views.delete_profiles, name='delete_profiles'),
+
     path('profiles/<int:pk>/edit/', profile_views.edit_profiles, name='edit_profiles'),
+
     path('profiles/<int:pk>/detail/', profile_views.profiles_details, name='profiles_details'), 
 
 

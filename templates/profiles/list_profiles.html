@@ -1,36 +1,40 @@
 {% extends "base.html" %}
 
+load static
+
 {% block content %}
 
-    <h1><strong>Profiles</strong></h1>
+    <h1><strong>All Profiles</strong></h1>
     <p><button><a class="add" href="{% url 'add_profiles' %}">Add New Profile</a></button>
     
 
 
-  <div class="everything">
+<div class="everything">
           
-          {% for profile in myapp %}
-          <div class="flex">
+    {% for profiles in myapp %}
+
+<div class="flex">
           
-          <h2> "{{ profile.name }}" </h2>
-          <img src="{{ profile.image_url }}" height='200' width='250'>
-          <h4>, {{ profile.position }}
-          <p> @ {{ profile.company }}</p>
+        <h2> "{{ profile.name }}" </h2>
+          
+        <img src="{{ profile.image_url }}" height='200' width='250'>
+        <h4>, {{ profile.position }}</h4>
+        <p> @ {{ profile.company }}</p>
         
-          <p>
-          <button class="button2"><a class="profilesstuff" href="{% url 'profiles_details' pk=profile.pk %}">Profiles Details</a></button>
-          <button class="button2"><a class="profilesstuff"
-           href="{% url 'edit_profiles' pk=profile.pk %}"> Edit Profile </a></button>
+        <p>
+            <button class="button2"><a class="profilesstuff" href="{% url 'profiles_details' pk=profile.pk %}">Profile Details</a></button>
 
-          <button class="delete_alert button2 profilesstuff" data-profile={{profile.pk}}> Delete Profile</button>
+            <button class="button2"><a class="profilesstuff"
+            href="{% url 'edit_profiles' pk=profile.pk %}"> Edit Profile</a></button>
 
-          </p></h4>
-          
-          </div>
+            <button class="delete_alert button2 profilesstuff" data-profile={{profile.pk}}> Delete Profile</button>
 
-          <br>
-          {% endfor %}
+        </p>
+<br>          
+</div>
+
+    {% endfor %}
        
-  </div>
+</div>
 
 {% endblock %}
