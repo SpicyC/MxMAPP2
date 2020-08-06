@@ -1,0 +1,4 @@
+wget https://raw.githubusercontent.com/TwilioDevEd/sdk-starter-python/master/static/chat/index.html -O chatapp/templates/twilio/index.html
+wget https://raw.githubusercontent.com/TwilioDevEd/sdk-starter-python/master/static/chat/index.css -O chatapp/static/twilio/index.css
+wget https://raw.githubusercontent.com/TwilioDevEd/sdk-starter-python/master/static/chat/index.js -O chatapp/static/twilio/index.js
+
